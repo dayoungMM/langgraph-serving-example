@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  
+  "configurations": [
+    {
+      "name": "[▪️]run graph",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/flows/graph.py",
+      "cwd": "${workspaceFolder}",
+      "env": {"PYTHONPATH": "${workspaceFolder}"},
+      "envFile": "${workspaceFolder}/.env",
+      "console": "internalConsole",
+    },
+    {
+      "name": "[🍃]run api-server",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/backend/main.py",
+      "cwd": "${workspaceFolder}",
+      "env": {"PYTHONPATH": "${workspaceFolder}"},
+      "envFile": "${workspaceFolder}/.env",
+      "console": "internalConsole",
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${fileDirname}",
+      "console": "internalConsole",
+    },
+    {
+      "name": "Python debugger: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "purpose": [
+        "debug-test"
+      ],
+      "console": "internalConsole",
+      "envFile": "${workspaceFolder}/.env",
+      "cwd": "${workspaceFolder}",
+    },
+    {
+      "name": "Python Debugger: Python File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}"
+    },    
+
+  ]
+}
