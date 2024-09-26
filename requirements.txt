@@ -3,8 +3,16 @@ langchain-community>=0.3.0
 langchain-core>=0.3.2
 langchain>=0.3.0
 langgraph>=0.2.26
-langchain-experimental>=0.3.0
-wikipedia>=1.4.0
+
+#api app
 fastapi>=0.115.0
 langserve[all]>=0.3.0
 sse_starlette>=1.8.2
+
+#usecase 를 위한 추가 패키지
+langchain-experimental>=0.3.0
+wikipedia>=1.4.0
+
+#draw graph png
+pyppeteer
+nest_asyncio
