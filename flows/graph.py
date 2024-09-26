@@ -11,7 +11,6 @@ from langchain_core.messages import (
     HumanMessage,
 )
 from flows.implements import MessageNode, MessageState
-from flows.utils import EventPrinter
 
 from typing import Annotated
 from langchain_core.tools import tool
@@ -188,19 +187,17 @@ if __name__ == "__main__":
     print(">>>> Test Invoke ")
     final_answer = graph.invoke(
         MessageState(
-            messages=[
-                HumanMessage(content="Code hello world and print it to the terminal")
-            ],
+            messages=[HumanMessage(content="Who is NewJeans?")],
             prev_node="user",
         )
     )
     print(final_answer["messages"][-1].content)
 
-    print(">>>> Test Stream ")
-    test_messages = MessageState(
-        messages=[HumanMessage(content="Who is NewJeans?")],
-        prev_node="user",
-    )
+    # print(">>>> Test Stream ")
+    # test_messages = MessageState(
+    #     messages=[HumanMessage(content="Who is NewJeans?")],
+    #     prev_node="user",
+    # )
     # test_messages = MessageState(
     #     messages=[
     #         HumanMessage(content="Code hello world and print it to the terminal")
@@ -208,8 +205,8 @@ if __name__ == "__main__":
     #     prev_node="user",
     # )
 
-    events = graph.stream(test_messages, stream_mode="values")
+    # events = graph.stream(test_messages, stream_mode="values")
 
-    printer = EventPrinter()
-    for event in events:
-        printer.print_event(event)
+    # printer = EventPrinter()
+    # for event in events:
+    #     printer.print_event(event)
