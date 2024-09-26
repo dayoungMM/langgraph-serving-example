@@ -16,7 +16,7 @@
       "name": "[🍃]run api-server",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/apps/backend/main.py",
+      "program": "${workspaceFolder}/app/server.py",
       "cwd": "${workspaceFolder}",
       "env": {"PYTHONPATH": "${workspaceFolder}"},
       "envFile": "${workspaceFolder}/.env",
