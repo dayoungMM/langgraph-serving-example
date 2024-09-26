@@ -20,6 +20,7 @@ from collections.abc import Callable
 class MessageState(BaseState):
     """State는 예시. messages에 기록하는 방식
     messages: list[AnyMessage] - 메시지 리스트
+    additional_kwargs: dict[str, Any] - 추가적인 정보. 메세지로 담기에는 마이너한 정보이거나, 다음 노드에서 바로쓰는것이 아니지만 누군가는 사용할 정보 등을 저장.
     prev_node: str - 이전 노드 이름.
     next_node: str - 다음 노드 이름. Conditional Edge인 경우에만 사용. 그 외의 경우 None이어도 됨.
     """
