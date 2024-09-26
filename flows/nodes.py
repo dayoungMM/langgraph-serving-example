@@ -12,7 +12,7 @@ from langchain_core.messages import (
     SystemMessage,
 )
 from typing import Any
-from flows.interfaces import BaseNode, BaseState
+from flows.base import BaseNode, BaseState
 from typing import Annotated
 from collections.abc import Callable
 

@@ -6,13 +6,13 @@ from langserve import add_routes
 from fastapi.middleware.cors import CORSMiddleware
 from langchain_core.messages import HumanMessage
 from flows.graph import llm_client, graph
-from flows.implements import MessageState
+from flows.nodes import MessageState
 from app.type import ReqGraphExecution, ResGraphExecution
 
 app = FastAPI(
     title="LangChain Server",
     version="1.0",
-    description="Spin up a simple api server using Langchain's Runnable interfaces",
+    description="PlatForm Agent App Example",
 )
 
 # Set all CORS enabled origins

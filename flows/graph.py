@@ -10,7 +10,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import (
     HumanMessage,
 )
-from flows.implements import MessageNode, MessageState
+from flows.nodes import MessageNode, MessageState
 
 from typing import Annotated
 from langchain_core.tools import tool

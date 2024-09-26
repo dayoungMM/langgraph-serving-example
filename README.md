@@ -6,12 +6,12 @@ pip install -r requirements.txt
 ```
 
 ## 2. LangGraph 개발 가이드
-- 추상 클래스 (flows/interfaces.py)
+- 추상 클래스 (flows/base.py)
     - LangGraph의 구성요소인 State와 Node를 생성하는 클래스의 추상 클래스 : BaseNode, BaseState
     - 추상 클래스를 상속 가능한 형식으로 개발하면 좋을 것 같습니다.
     - BaseAgent는 플랫폼에서 개발중인 Agent의 추상 클래스로, BaseAgent가 runnable을 만들고 BaseNode에 넣어주는 방식으로 개발중입니다.
 
-- 구현 클래스 (flows/implements.py)
+- 구현 클래스 (flows/nodes.py)
     - 추상클래스를 상속, 실제 사용할 Node와 State를 만드는 클래스 : MessageNode, MessageState
     - MessageState.message에 이력을 저장하는 방식
     - AIX Platform에서는 이런 방식으로 Graph를 생성하도록 개발할 예정입니다.
