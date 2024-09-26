@@ -3,7 +3,7 @@
   
   "configurations": [
     {
-      "name": "[▪️]run graph",
+      "name": "🔗run graph",
       "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/flows/graph.py",
