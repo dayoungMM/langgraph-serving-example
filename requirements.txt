@@ -5,6 +5,6 @@ langchain>=0.3.0
 langgraph>=0.2.26
 langchain-experimental>=0.3.0
 wikipedia>=1.4.0
-fastapi
-langserve[all]
-sse_starlette
+fastapi>=0.115.0
+langserve[all]>=0.3.0
+sse_starlette>=1.8.2
