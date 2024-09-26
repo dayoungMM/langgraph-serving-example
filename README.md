@@ -1,8 +1,16 @@
 # langgraph-serving-example
 
-## 1. Install
+## 1. 준비
+install
+- 패키지 설치
 ```
 pip install -r requirements.txt
+```
+
+environment variables
+- 복사해서 값 넣기
+```
+cp .env-example .env
 ```
 
 ## 2. LangGraph 개발 가이드
