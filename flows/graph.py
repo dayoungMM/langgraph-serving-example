@@ -157,32 +157,31 @@ def supervisor(state):
 # create supervisor
 supervisor_agent = MessageNode(supervisor, name="Supervisor")
 
+######### Create Graph #########
+workflow = StateGraph(MessageState)
+
+workflow.add_node("Researcher", researcher_agent)
+workflow.add_node("Coder", coder_agent)
+workflow.add_node("Supervisor", supervisor_agent)
+
+workflow.add_edge("Researcher", "Supervisor")
+workflow.add_edge("Coder", "Supervisor")
+
+conditional_map = {
+    "researcher": "Researcher",
+    "coder": "Coder",
+    "supervisor": "Supervisor",
+    "finish": END,
+}
+
+workflow.add_conditional_edges(
+    "Supervisor", lambda x: x.next_node.lower(), conditional_map
+)
+workflow.add_edge(START, "Supervisor")
+
+graph = workflow.compile()
 
 if __name__ == "__main__":
-    # create graph
-    workflow = StateGraph(MessageState)
-
-    workflow.add_node("Researcher", researcher_agent)
-    workflow.add_node("Coder", coder_agent)
-    workflow.add_node("Supervisor", supervisor_agent)
-
-    workflow.add_edge("Researcher", "Supervisor")
-    workflow.add_edge("Coder", "Supervisor")
-
-    conditional_map = {
-        "researcher": "Researcher",
-        "coder": "Coder",
-        "supervisor": "Supervisor",
-        "finish": END,
-    }
-
-    workflow.add_conditional_edges(
-        "Supervisor", lambda x: x.next_node.lower(), conditional_map
-    )
-    workflow.add_edge(START, "Supervisor")
-
-    graph = workflow.compile()
-
     ######### Test #########
     print(">>>> Test Invoke ")
     final_answer = graph.invoke(
