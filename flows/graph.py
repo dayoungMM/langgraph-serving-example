@@ -170,7 +170,6 @@ workflow.add_edge("Coder", "Supervisor")
 conditional_map = {
     "researcher": "Researcher",
     "coder": "Coder",
-    "supervisor": "Supervisor",
     "finish": END,
 }
 
